@@ -1,7 +1,5 @@
-import {Component} from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-@Component({
-  selector: 'fountain-app',
-  template: require('./main.html')
-})
-export class MainComponent {}
+import { AppModule } from './app.module';
+
+platformBrowserDynamic().bootstrapModule(AppModule);
