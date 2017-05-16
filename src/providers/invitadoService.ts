@@ -11,14 +11,14 @@ import { Invitado } from '../models/invitado';
   for more info on providers and Angular 2 DI.
 */
 @Injectable()
-export class Invitados {
-  ApiUrl = 'http://localhost:1800/api/invitado'
+export class InvitadoService {
+  ApiUrl = 'http://localhost:50843/api'
   constructor(public http: Http) {
     console.log('Service Invitados Provider');
   }
   // Load all Invitados
   load(): Observable<Invitado[]> {
-    return this.http.get(`${this.ApiUrl}/users`)
+    return this.http.get(`${this.ApiUrl}/invitados`)
       .map(res => <Invitado[]>res.json());
   }
 }

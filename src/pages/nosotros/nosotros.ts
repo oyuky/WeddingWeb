@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Invitado } from '../../models/invitado'
+import { InvitadoService } from '../../providers/invitadoService'
 /**
  * Generated class for the Nosotros page.
  *
@@ -13,8 +14,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'nosotros.html',
 })
 export class Nosotros {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  users: Invitado[]
+  constructor(public navCtrl: NavController, public navParams: NavParams, private invitadoService: InvitadoService) {
+    invitadoService.load().subscribe(users=>{
+      console.log(users)
+    })
   }
 
   ionViewDidLoad() {

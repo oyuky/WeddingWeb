@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { HttpModule } from '@angular/http';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
@@ -10,7 +11,7 @@ import { Nosotros } from '../pages/nosotros/nosotros';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { Invitados } from '../providers/Invitados';
+import { InvitadoService } from '../providers/invitadoService';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { Invitados } from '../providers/Invitados';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -36,7 +38,7 @@ import { Invitados } from '../providers/Invitados';
   providers: [
     StatusBar,
     SplashScreen,
-    Invitados,
+    InvitadoService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
