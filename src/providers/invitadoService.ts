@@ -12,7 +12,7 @@ import { Invitado } from '../models/invitado';
 */
 @Injectable()
 export class InvitadoService {
-  ApiUrl = 'http://localhost:50843/api'
+  ApiUrl = '/api'
   constructor(public http: Http) {
     console.log('Service Invitados Provider');
   }
