@@ -10,19 +10,17 @@ import { InvitadoService } from '../../providers/invitadoService'
  */
 @IonicPage()
 @Component({
-  selector: 'page-nosotros',
-  templateUrl: 'nosotros.html',
+  selector: 'page-ubicacion',
+  templateUrl: 'ubicacion.html',
 })
-export class Nosotros {
+export class Ubicacion {
   users: Invitado[]
   constructor(public navCtrl: NavController, public navParams: NavParams, private invitadoService: InvitadoService) {
-    invitadoService.load().subscribe(users=>{
-      console.log(users)
-    })
+
   }
 
   ionViewDidLoad() {
-    console.log('About page Nosotros');
+    console.log('Ubicaciones');
   }
 
 }
