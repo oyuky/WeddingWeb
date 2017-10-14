@@ -1,6 +1,48 @@
 // http://ionicframework.com/docs/v2/theming/
 
+@font-face {
 
+font-family: normal-letter;
+
+src: url("../assets/fonts/Italianno-Regular.ttf") format('truetype');
+
+}
+@font-face {
+
+font-family: elegante;
+
+src: url("../assets/fonts/Maratre.ttf") format('truetype');
+
+}
+
+.elegante{
+font-family: elegante;
+}
+
+.normal-italian{
+font-family: normal-letter;
+}
+
+.pareja{
+  font-size: 8em;
+}
+
+.mama{
+  font-size:2.5em;
+}
+
+.HeaderTitle{
+  font-size:2.5em;
+}
+
+.info{
+  font-size:1.2em;
+}
+
+.backgroundInv{
+  background-color: color($colors, backblue, base);
+  color: color($colors,light,base);
+}
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These

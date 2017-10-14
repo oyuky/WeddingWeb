@@ -6,4 +6,5 @@ export interface Invitado{
   apellidopaterno: string;
   apellidomaterno: string;
   menor: number;
+  adultos: number;
 }
