@@ -32,7 +32,7 @@ export class MyApp {
     this.pages = [
       { title: 'Invitacion', component: Invitacion },
       { title: 'Ubicaciones', component: Ubicacion },
-      { title: 'Lista de Regalos', component: ListPage },
+      { title: 'Mesa de Regalos', component: ListPage },
       { title: 'Confirmacion', component: Confirmacion }
     ];
   }

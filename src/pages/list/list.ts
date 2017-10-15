@@ -10,6 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 export class ListPage {
   icons: string[];
   items: Array<{tienda: string, numero: string, icon: string}>;
+  pinguino: number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.icons = ['pricetag', 'pricetags'];
@@ -29,6 +30,6 @@ export class ListPage {
   }
 
   itemTapped(event, item) {
-
+    this.pinguino++;
   }
 }
