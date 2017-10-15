@@ -23,8 +23,13 @@ font-family: elegante;
 font-family: normal-letter;
 }
 
+.andStyle{
+  font-size:.6em;
+}
+
 .pareja{
   font-size: 8em;
+  margin: .4em 0px;
 }
 
 .mama{
@@ -58,7 +63,30 @@ font-family: normal-letter;
   position:fixed;
   bottom:10px;
   right:10px;
-  
+
+}
+
+@media only screen and (min-width: 319px) and (max-width: 767px) {
+  .responsive{
+    display: inline-block;
+  }
+  .grullasback{
+    background-image: url("../assets/images/backgroundgrulla.png"),url("../assets/images/backgroundbarra2.png");
+    background-repeat: no-repeat;
+    background-position: right top,left top;
+    background-size:50% 70%,20% 150%;
+  }
+}
+@media only screen and  (min-width: 768px) {
+  .responsive {
+    display: inline-flex;
+  }
+  .grullasback{
+    background-image: url("../assets/images/backgroundgrulla.png"),url("../assets/images/backgroundbarra2.png");
+    background-repeat: no-repeat;
+    background-position: right top,left top;
+    background-size:40% 70%,15% 100%;
+  }
 }
 // App Global Sass
 // --------------------------------------------------
