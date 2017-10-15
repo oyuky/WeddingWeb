@@ -4,10 +4,17 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Ubicaci&oacute;n</ion-title>
-  </ion-navbar>
+    <ion-buttons end>
+      <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon>Add Marker</button>
+    </ion-buttons>
+  </ion-navbar> 
 </ion-header>
 
-<ion-content>
+<ion-content padding class="backgroundInv">
+
+    <div #map id="map"></div>
+
+
   <p class="info">
     Direccion de la iglesa (link como llegar)
   </p>
@@ -32,29 +39,5 @@
 <h3>Ubicacion Hacienda</h3>
 <p></p>
 <div id="map2"></div>
-<script>
-  function initMap() {
-    var iglesia = {lat: -25.363, lng: 131.044};
-    var hacienda = {lat: -25.363, lng: 131.044};
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
-      center: iglesia
-    });
-    var map2 = new google.maps.Map(document.getElementById('map2'), {
-      zoom: 4,
-      center: hacienda
-    });
-    var marker = new google.maps.Marker({
-      position: iglesia,
-      map: map
-    });
-    var marker2 = new google.maps.Marker({
-      position: hacienda,
-      map: map2
-    });
-  }
-</script>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFW0oug2BdLwSU6GYeIO2Yda3vj5_Golg&callback=initMap">
-</script>
+
 </ion-content>
