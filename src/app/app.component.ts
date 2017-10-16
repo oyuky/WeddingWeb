@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
+import { IntroPage } from '../pages/intro/intro';
 import { Invitacion } from '../pages/invitacion/invitacion';
 import { ListPage } from '../pages/list/list';
 import { Confirmacion } from '../pages/confirmacion/confirmacion';
@@ -17,7 +18,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage = Invitacion;
+  rootPage = IntroPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(

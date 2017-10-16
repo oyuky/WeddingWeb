@@ -3,7 +3,9 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
+import { IonicStorageModule } from '@ionic/Storage';
 
+import { IntroPage } from '../pages/intro/intro';
 import { Invitacion } from '../pages/invitacion/invitacion';
 import { Confirmacion } from '../pages/confirmacion/confirmacion';
 import { ListPage } from '../pages/list/list';
@@ -16,6 +18,7 @@ import { InvitadoService } from '../providers/invitadoService';
 
 @NgModule({
   declarations: [
+    IntroPage,
     MyApp,
     Invitacion,
     Confirmacion,
@@ -26,9 +29,11 @@ import { InvitadoService } from '../providers/invitadoService';
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
+    IntroPage,
     MyApp,
     Invitacion,
     Confirmacion,
@@ -39,6 +44,7 @@ import { InvitadoService } from '../providers/invitadoService';
     StatusBar,
     SplashScreen,
     InvitadoService,
+    IonicStorageModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

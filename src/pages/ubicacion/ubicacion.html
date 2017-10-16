@@ -7,37 +7,25 @@
     <ion-buttons end>
       <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon>Add Marker</button>
     </ion-buttons>
-  </ion-navbar> 
+  </ion-navbar>
 </ion-header>
 
 <ion-content padding class="backgroundInv">
 
+  <h3>Ubicacion Iglesia</h3>
+  <p class="info">
+    Los esperamos ala ceremonia alas 17:00 horas en la Rector&iacute;a el Jes&uacute;s Tercera Orden.
+    Calle 60 x 59-A s/n, Centro, 97000 Mérida, Yuc.
+    (link como llegar)
+  </p>
     <div #map id="map"></div>
 
-
+    <h3>Ubicacion Hacienda</h3>
   <p class="info">
-    Direccion de la iglesa (link como llegar)
-  </p>
-  <p class="info">
-    Despues celebraremos en la hacienda XXXXXXXXXXX a las 7? ubicado en
-  </p>
-  <p class="info">
-    Direccion de la hacienda (link como llegar)
-  </p>
-  <p class="info">
-    Continua con el registro para confirmar tu asistencia
-  </p>
-  <p>
-    <button ion-button color="primary" menuToggle>Mas Informaci&oacute;n</button>
+    Despues los esperamos en la hacienda San Pedro Palomeque ubicado en
+    Periferico Sur Km 4.5, Buenavista, 97127 Mérida, Yuc.
   </p>
 
-<h3>Ubicacion Iglesia</h3>
-<p></p>
-<div id="map"></div>
-
-
-<h3>Ubicacion Hacienda</h3>
-<p></p>
-<div id="map2"></div>
+<div #map id="map2"></div>
 
 </ion-content>
