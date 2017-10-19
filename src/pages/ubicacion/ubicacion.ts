@@ -17,6 +17,7 @@ export class Ubicacion {
 
   map: any;
   map2: any;
+  marker: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
@@ -44,6 +45,14 @@ export class Ubicacion {
       }
 
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-
+      this.marker = new google.maps.Marker({
+        position: this.map.getCenter(),
+        icon: {
+          path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+          scale: 8
+        },
+        draggable: false,
+        map: this.map
+      });
     }
 }
