@@ -18,6 +18,7 @@ import { Invitacion } from '../../pages/invitacion/invitacion'
 
 export class IntroPage {
   param: string;
+  password: string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.param = navParams.get('tokenId');
     console.log(this.param);
@@ -27,6 +28,8 @@ export class IntroPage {
     console.log('ionViewDidLoad IntroPage');
   }
   navHome() {
-     this.navCtrl.setRoot(Invitacion);
+    if (this.password == "lesluthiers"){
+       this.navCtrl.setRoot(Invitacion);
+    }
    }
 }

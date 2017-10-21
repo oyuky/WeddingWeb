@@ -16,8 +16,12 @@
 
     <ion-slide>
       <img src="assets/images/eggs-wedding.jpg" style="max-height:750px;">
+      <ion-item>
+        <ion-label color="primary" stacked>Clave</ion-label>
+        <ion-input [(ngModel)]="password" type="password" placeholder="Password"></ion-input>
+      </ion-item>
       <h1>Adentro esta la Invitacion! Quieres asistir?</h1>
-      <button ion-button outline small (click)="navHome()">
+      <button ion-button outlinse small (click)="navHome()">
          Si
       </button>
       <button ion-button outline small (click)="navHome()">
