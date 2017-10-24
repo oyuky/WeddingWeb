@@ -10,7 +10,43 @@
 <ion-content padding class="backgroundInv">
   <h3 text-center >
   </h3>
-  <h4 text-center >
-    form <b></b>
-  </h4>
+    <ion-list>
+  <ion-item>
+    <ion-label color="primary" fixed>Nombre</ion-label>
+    <ion-input  [(ngModel)]="invitado.nombre" placeholder="Nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" fixed>Correo</ion-label>
+    <ion-input [(ngModel)]="invitado.correo" type="email" placeholder="Correo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" fixed>Familia</ion-label>
+    <ion-input [(ngModel)]="invitado.familia" placeholder="Familia"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" fixed>Adultos</ion-label>
+    <ion-input [(ngModel)]="invitado.adultos" type="number" placeholder="Adultos"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" fixed>Menores</ion-label>
+    <ion-input [(ngModel)]="invitado.menor" type="number" placeholder="Menores"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Que musica quieres</ion-label>
+    <ion-textarea [(ngModel)]="invitado.musica" placeholder="Musica Favorita"></ion-textarea>
+  </ion-item>
+
+<ion-item>
+<button ion-button (click)="Confirmar()">Confirmar Asistencia</button>
+</ion-item>
+
+</ion-list>
+<div class="flor">
+  <img src="assets/images/geometric-rose.png" height="150" width="150">
+</div>
 </ion-content>

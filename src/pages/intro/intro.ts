@@ -27,9 +27,11 @@ export class IntroPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad IntroPage');
   }
+
   navHome() {
-    if (this.password == "lesluthiers"){
+    if (this.password == "O&F.25.11.2017" || this.password == "lesluthiers") {
        this.navCtrl.setRoot(Invitacion);
     }
    }
+
 }

@@ -9,14 +9,20 @@ import { InvitadoService } from '../../providers/invitadoService'
   templateUrl: 'confirmacion.html'
 })
 export class Confirmacion {
-    users: Invitado[]
+    invitado: Invitado = <Invitado> {};;
     selectedItem: any;
+    data: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private invitadoService: InvitadoService) {
-    // If we navigated to this page, we will have an item available as a nav param
-    //this.selectedItem = navParams.get('item');
-
+      this.data = this.invitadoService.load('testestuser2@corre.com').subscribe();
+      console.log(this.data);
   }
 
+  Confirmar() {
+    console.log(this.invitado);
+    this.invitadoService.New(this.invitado).subscribe();
+
+      console.log(this.data);
+   }
 
 }
