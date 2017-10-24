@@ -3,18 +3,26 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>My First List</ion-title>
+    <ion-title>Mesa de Regalos</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="backgroundInv">
+  <div>
+    <p class="MesaRegalos lateralpadding25">Numero de Eventos
+  </p>
+  </div>
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-icon name="{{item.icon}}" item-left></ion-icon>
-      {{item.title}}
+      <p class="MesaRegalos">{{item.tienda}}</p>
       <div class="item-note" item-right>
-        {{item.note}}
+        <p class="MesaRegalos">{{item.numero}}</p>
       </div>
     </button>
   </ion-list>
+
+  <div class="flor">
+    <img src="assets/images/{{pinguino>5?'pinguino':'geometric-rose'}}.png" height="{{pinguino>5?'250':'150'}}" width="150">
+  </div>
 </ion-content>

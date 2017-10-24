@@ -1,6 +1,14 @@
 {
-  "name": "githubIonic",
+  "name": "Invitacion boda Oyuky y Francisco",
   "app_id": "",
-  "v2": true,
-  "typescript": true
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://107.170.240.37:3000/api"
+    }
+  ],
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }
