@@ -1,9 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 import { Http } from '@angular/http'
-import { Observable } from 'rxjs/Rx';
-import 'rxjs/add/operator/map';
-
-import { Invitado } from '../models/invitado';
+import { Observable } from 'rxjs/Rx'
+import 'rxjs/add/operator/map'
+import { Invitado } from '../models/invitado'
 /*
   Generated class for the Invitados provider.
 http://107.170.240.37:3000/api/invitado

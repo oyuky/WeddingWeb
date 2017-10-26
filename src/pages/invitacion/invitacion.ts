@@ -1,7 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { IntroPage } from '../../pages/intro/intro';
-import { Storage } from '@ionic/Storage';
+import { Component } from '@angular/core'
+import { NavController } from 'ionic-angular'
 
 
 @Component({
@@ -9,17 +7,12 @@ import { Storage } from '@ionic/Storage';
   templateUrl: 'invitacion.html'
 })
 export class Invitacion {
-  constructor(public navCtrl: NavController, public storage: Storage) {
+  constructor(public navCtrl: NavController) {
 
   }
 
   ionViewDidLoad() {
-  this.storage.get('intro-done').then(done => {
-    if (!done) {
-      this.storage.set('intro-done', true);
-      this.navCtrl.setRoot(IntroPage);
-    }
-  });
+
 }
 
 }
