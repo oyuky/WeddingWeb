@@ -4,20 +4,22 @@
   <ion-slides pager="true" parallax="true" >
 
     <ion-slide>
-      <img src="assets/images/bunch-of-flowers.jpg" style="max-height:750px;width:100%">
+      <img src="assets/images/bunch-of-flowers.jpg" style="max-height:650px;width:100%">
       <h1>Estas invitado a un evento</h1>
     </ion-slide>
 
     <ion-slide>
-      <img src="assets/images/Romantic-Backgrounds-Full-HD-8.jpg" style="max-height:750px;width:100%">
+      <img src="assets/images/Romantic-Backgrounds-Full-HD-8.jpg" style="max-height:650px;width:100%">
       <h1>No no es en la playa</h1>
       <p>Si ya te lo estas imaginando...</p>
     </ion-slide>
 
     <ion-slide>
-      <img src="assets/images/eggs-wedding.jpg" style="max-height:750px;width:100%">
-
+      <img src="assets/images/eggs-wedding.jpg" style="max-height:650px;width:100%">
       <h1>Adentro esta la Invitacion! Quieres asistir?</h1>
+<div>
+      <input [(ngModel)]="password" type="text" class="center" style="width:250px" placeholder="Captura la clave que te dimos"/>
+</div><div>
       <button ion-button outlinse small (click)="navHome()">
          Si
       </button>
@@ -27,8 +29,7 @@
       <button ion-button outline small>
          No
       </button>
-      <ion-input center [(ngModel)]="password" type="password" placeholder="Captura la clave que te dimos"></ion-input>
-
+</div>
     </ion-slide>
 
   </ion-slides>

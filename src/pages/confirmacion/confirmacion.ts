@@ -14,7 +14,7 @@ export class Confirmacion {
     data: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private invitadoService: InvitadoService) {
-      this.data = this.invitadoService.load('testestuser2@corre.com').subscribe();
+      //this.data = this.invitadoService.load('testestuser2@corre.com').subscribe();
       console.log(this.data);
   }
 
