@@ -27,7 +27,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		2: 0
+/******/ 		3: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -29305,7 +29305,7 @@ function cssFormat(val) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_app_app_root__ = __webpack_require__(53);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__components_app_app_root__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_app_menu_controller__ = __webpack_require__(25);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_1__components_app_menu_controller__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_1__components_app_menu_controller__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_action_sheet_action_sheet__ = __webpack_require__(50);
 /* unused harmony reexport ActionSheet */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_action_sheet_action_sheet_controller__ = __webpack_require__(111);
@@ -29315,7 +29315,7 @@ function cssFormat(val) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_alert_alert__ = __webpack_require__(52);
 /* unused harmony reexport Alert */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_alert_alert_controller__ = __webpack_require__(112);
-/* unused harmony reexport AlertController */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_6__components_alert_alert_controller__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_alert_alert_component__ = __webpack_require__(51);
 /* unused harmony reexport AlertCmp */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_app_app__ = __webpack_require__(6);
@@ -29411,7 +29411,7 @@ function cssFormat(val) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_modal_modal_controller__ = __webpack_require__(141);
 /* unused harmony reexport ModalController */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_nav_nav__ = __webpack_require__(69);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_54__components_nav_nav__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_54__components_nav_nav__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_nav_nav_pop__ = __webpack_require__(67);
 /* unused harmony reexport NavPop */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_nav_nav_pop_anchor__ = __webpack_require__(143);
@@ -29528,7 +29528,7 @@ function cssFormat(val) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_110__platform_dom_controller__ = __webpack_require__(8);
 /* unused harmony reexport DomController */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_111__platform_platform__ = __webpack_require__(3);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_111__platform_platform__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_111__platform_platform__["a"]; });
 /* unused harmony reexport setupPlatform */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_112__tap_click_haptic__ = __webpack_require__(36);
 /* unused harmony reexport Haptic */
@@ -55722,10 +55722,9 @@ Contacto = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'page-contacto',template:/*ion-inline-start:"D:\WeddingWeb\src\pages\contacto\contacto.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Contacto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="backgroundInv">\n  <br/>\n<h3>Contactos</h3>\n  <br/>\n<p>Mary Oyuky Chian Leal</p>\n<p><b>Telefono:</b>  9992703034</p>\n<p><b>Correo:</b>  Yramlu@gmail.com</p>\n  <br/>\n<p>Francisco Daniel Salazar Aguirre</p>\n<p><b>Telefono:</b>  9992426753</p>\n<p><b>Correo:</b> fd.salazaraguirre@gmail.com</p>\n</ion-content>\n'/*ion-inline-end:"D:\WeddingWeb\src\pages\contacto\contacto.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], Contacto);
 
-var _a, _b;
 //# sourceMappingURL=contacto.js.map
 
 /***/ }),
@@ -55819,30 +55818,43 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var Confirmacion = (function () {
-    function Confirmacion(navCtrl, navParams, invitadoService) {
+    function Confirmacion(navCtrl, navParams, invitadoService, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.invitadoService = invitadoService;
+        this.alertCtrl = alertCtrl;
         this.invitado = {};
-        //this.data = this.invitadoService.load('testestuser2@corre.com').subscribe();
+        this.alert = this.alertCtrl.create({
+            title: 'Gracias por confirmar tu asistencia!',
+            subTitle: 'Te haremos llegar un recordatorio cuando se acerque la fecha la boda.',
+            buttons: ['OK']
+        });
+        //this.invitadoService.load('correo@demo.com').then(data => {this.data = data});
         console.log(this.data);
     }
     ;
     Confirmacion.prototype.Confirmar = function () {
-        console.log(this.invitado);
-        this.invitadoService.New(this.invitado).subscribe();
-        console.log(this.data);
+        var _this = this;
+        if (typeof this.invitado.menor === 'undefined') {
+            this.invitado.menor = 0;
+        }
+        this.invitadoService.New(this.invitado).subscribe(function () {
+            _this.alert.present();
+        });
     };
     return Confirmacion;
 }());
 Confirmacion = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'confirmacion',template:/*ion-inline-start:"D:\WeddingWeb\src\pages\confirmacion\confirmacion.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Confirmaci&oacute;n</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="backgroundInv">\n\n  <h3 text-center >\n\n  </h3>\n\n    <ion-list>\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Nombre</ion-label>\n\n    <ion-input  [(ngModel)]="invitado.nombre" placeholder="Nombre"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Correo</ion-label>\n\n    <ion-input [(ngModel)]="invitado.correo" type="email" placeholder="Correo"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Familia</ion-label>\n\n    <ion-input [(ngModel)]="invitado.familia" placeholder="Familia"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Adultos</ion-label>\n\n    <ion-input [(ngModel)]="invitado.adultos" type="number" placeholder="Adultos"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Menores</ion-label>\n\n    <ion-input [(ngModel)]="invitado.menor" type="number" placeholder="Menores"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" stacked>Que musica quieres</ion-label>\n\n    <ion-textarea [(ngModel)]="invitado.musica" placeholder="Musica Favorita"></ion-textarea>\n\n  </ion-item>\n\n\n\n<ion-item>\n\n<button ion-button (click)="Confirmar()">Confirmar Asistencia</button>\n\n</ion-item>\n\n\n\n</ion-list>\n\n<div class="flor">\n\n  <img src="assets/images/geometric-rose.png" height="150" width="150">\n\n</div>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\WeddingWeb\src\pages\confirmacion\confirmacion.html"*/
+        selector: 'confirmacion',template:/*ion-inline-start:"D:\WeddingWeb\src\pages\confirmacion\confirmacion.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Confirmaci&oacute;n</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="backgroundInv">\n\n  <h3 text-center >\n\n  </h3>\n\n    <ion-list>\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Nombre</ion-label>\n\n    <ion-input  [(ngModel)]="invitado.nombre" placeholder="Nombre"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Correo</ion-label>\n\n    <ion-input [(ngModel)]="invitado.correo" type="email" placeholder="Correo"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Familia</ion-label>\n\n    <ion-input [(ngModel)]="invitado.familia" placeholder="Familia"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Adultos</ion-label>\n\n    <ion-input [(ngModel)]="invitado.adultos" type="number" placeholder="Adultos"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Menores</ion-label>\n\n    <ion-input [(ngModel)]="invitado.menor" type="number" placeholder="Menores"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" stacked>Que musica quieres</ion-label>\n\n    <ion-textarea [(ngModel)]="invitado.musica" placeholder="Musica Favorita"></ion-textarea>\n\n  </ion-item>\n\n\n\n<ion-item>\n\n<button ion-button (click)="Confirmar()">Confirmar Asistencia</button>\n\n</ion-item>\n\n\n\n</ion-list>\n\n<div class="flor">\n\n  <img src="assets/images/geometric-rose.png" height="150" width="150">\n\n</div>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\WeddingWeb\src\pages\confirmacion\confirmacion.html"*/,
+        providers: [__WEBPACK_IMPORTED_MODULE_2__providers_invitadoService__["a" /* InvitadoService */]]
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_invitadoService__["a" /* InvitadoService */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_invitadoService__["a" /* InvitadoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_invitadoService__["a" /* InvitadoService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* AlertController */]) === "function" && _d || Object])
 ], Confirmacion);
 
+var _a, _b, _c, _d;
 //# sourceMappingURL=confirmacion.js.map
 
 /***/ }),
@@ -56011,29 +56023,41 @@ var InvitadoService = (function () {
     function InvitadoService(http) {
         this.http = http;
         this.ApiUrl = '/api';
-        console.log('Service Invitados Provider');
+        this.data = null;
     }
     // Load Invitado
     InvitadoService.prototype.load = function (correo) {
-        return this.http.get(this.ApiUrl + "/invitado/" + correo)
-            .map(function (res) { return res.json(); });
+        var _this = this;
+        if (this.data) {
+            // already loaded data
+            return Promise.resolve(this.data);
+        }
+        return new Promise(function (resolve) {
+            _this.http.get(_this.ApiUrl + "/invitado/" + correo)
+                .map(function (res) { return res.json(); })
+                .subscribe(function (data) {
+                _this.data = data;
+                resolve(_this.data);
+            });
+        });
     };
     // Load Invitado
     InvitadoService.prototype.Save = function (invitado, correo) {
         return this.http.put(this.ApiUrl + "/invitado/" + correo, invitado)
-            .map(function (res) { return res.json(); });
+            .map(function (res) { return "Se ha guardado con exito"; });
     };
     InvitadoService.prototype.New = function (invitado) {
         return this.http.post(this.ApiUrl + "/invitado/", invitado)
-            .map(function (res) { return res.json(); });
+            .map(function (res) { return "Se ha guardado con exito"; });
     };
     return InvitadoService;
 }());
 InvitadoService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], InvitadoService);
 
+var _a;
 //# sourceMappingURL=invitadoService.js.map
 
 /***/ }),
@@ -76758,10 +76782,14 @@ module.exports = g;
 var map = {
 	"../pages/contacto/contacto.module": [
 		268,
-		1
+		2
 	],
 	"../pages/intro/intro.module": [
 		269,
+		1
+	],
+	"../pages/sugerencias/sugerencias.module": [
+		270,
 		0
 	]
 };
@@ -76841,7 +76869,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                 links: [
                     { loadChildren: '../pages/intro/intro.module#IntroPageModule', name: 'IntroPage', segment: '/:tokenId', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/contacto/contacto.module#ContactoPageModule', name: 'Contacto', segment: 'contacto', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/contacto/contacto.module#ContactoPageModule', name: 'Contacto', segment: 'contacto', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/sugerencias/sugerencias.module#SugerenciasPageModule', name: 'SugerenciasPage', segment: 'sugerencias', priority: 'low', defaultHistory: [] }
                 ]
             })
         ],
@@ -77123,14 +77152,14 @@ var MyApp = (function () {
     return MyApp;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({template:/*ion-inline-start:"D:\WeddingWeb\src\app\app.html"*/'<ion-menu [content]="content">\n\n\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Opciones</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content>\n\n    <ion-list>\n\n      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n        {{p.title}}\n\n      </button>\n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n'/*ion-inline-end:"D:\WeddingWeb\src\app\app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* MenuController */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */],
         __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__["a" /* StatusBar */],
         __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);

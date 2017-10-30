@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core'
 import { Http } from '@angular/http'
-import { Observable } from 'rxjs/Rx'
 import 'rxjs/add/operator/map'
 import { Invitado } from '../models/invitado'
 /*
@@ -11,25 +10,39 @@ http://107.170.240.37:3000/api/invitado
 */
 @Injectable()
 export class InvitadoService {
-  ApiUrl = '/api'
-  constructor(public http: Http) {
-    console.log('Service Invitados Provider');
+  ApiUrl = '/api';
+  data: any;
+
+  constructor(private http: Http) {
+    this.data = null;
   }
+
   // Load Invitado
-  load(correo:string): Observable<Invitado> {
-    return this.http.get(`${this.ApiUrl}/invitado/`+ correo)
-      .map(res => <Invitado>res.json());
+  load(correo:string) {
+    if (this.data) {
+      // already loaded data
+      return Promise.resolve(this.data);
+    }
+
+    return new Promise(resolve => {
+      this.http.get(`${this.ApiUrl}/invitado/`+ correo)
+        .map(res => res.json())
+        .subscribe(data => {
+          this.data = data;
+          resolve(this.data);
+        });
+    });
   }
+
   // Load Invitado
-  Save(invitado:Invitado,correo): Observable<Invitado> {
+  Save(invitado:Invitado,correo) {
     return this.http.put(`${this.ApiUrl}/invitado/`+ correo, invitado)
-      .map(res => <Invitado>res.json());
-
+      .map(res => "Se ha guardado con exito");
   }
 
-  New(invitado:Invitado): Observable<Invitado> {
+  New(invitado:Invitado) {
     return this.http.post(`${this.ApiUrl}/invitado/`,invitado)
-      .map(res => <Invitado>res.json());
+      .map(res => "Se ha guardado con exito");
   }
 
 }
