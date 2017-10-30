@@ -9,6 +9,7 @@ import { Invitacion } from '../pages/invitacion/invitacion';
 import { Confirmacion } from '../pages/confirmacion/confirmacion';
 import { ListPage } from '../pages/list/list';
 import { Ubicacion } from '../pages/ubicacion/ubicacion';
+import { Contacto } from '../pages/contacto/contacto';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +23,8 @@ import { InvitadoService } from '../providers/invitadoService';
     Invitacion,
     Confirmacion,
     ListPage,
-    Ubicacion
+    Ubicacion,
+    Contacto
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { InvitadoService } from '../providers/invitadoService';
     Invitacion,
     Confirmacion,
     ListPage,
-    Ubicacion
+    Ubicacion,
+    Contacto
   ],
   providers: [
     StatusBar,

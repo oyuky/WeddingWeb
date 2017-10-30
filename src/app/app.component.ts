@@ -2,13 +2,14 @@ import { Component, ViewChild } from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
-import { IntroPage } from '../pages/intro/intro';
-import { Invitacion } from '../pages/invitacion/invitacion';
-import { ListPage } from '../pages/list/list';
-import { Confirmacion } from '../pages/confirmacion/confirmacion';
-import { Ubicacion } from '../pages/ubicacion/ubicacion';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { IntroPage } from '../pages/intro/intro'
+import { Invitacion } from '../pages/invitacion/invitacion'
+import { ListPage } from '../pages/list/list'
+import { Confirmacion } from '../pages/confirmacion/confirmacion'
+import { Ubicacion } from '../pages/ubicacion/ubicacion'
+import { Contacto } from '../pages/contacto/contacto'
+import { StatusBar } from '@ionic-native/status-bar'
+import { SplashScreen } from '@ionic-native/splash-screen'
 
 
 @Component({
@@ -34,7 +35,8 @@ export class MyApp {
       { title: 'Invitacion', component: Invitacion },
       { title: 'Ubicaciones', component: Ubicacion },
       { title: 'Mesa de Regalos', component: ListPage },
-      { title: 'Confirmacion', component: Confirmacion }
+      { title: 'Confirmacion', component: Confirmacion },
+      { title: 'Contacto', component: Contacto }
     ];
   }
 
