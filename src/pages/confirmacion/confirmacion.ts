@@ -10,13 +10,14 @@ import { AlertController } from 'ionic-angular';
   providers: [InvitadoService]
 })
 export class Confirmacion {
-    invitado: Invitado = <Invitado> {};;
+    invitado: Invitado = <Invitado> {};
     selectedItem: any;
     data: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private invitadoService: InvitadoService,public alertCtrl: AlertController) {
       //this.invitadoService.load('correo@demo.com').then(data => {this.data = data});
-      console.log(this.data);
+      this.invitado.menor = 0;
+      this.invitado.adultos = 0;
   }
 
      alert = this.alertCtrl.create({
@@ -26,10 +27,7 @@ export class Confirmacion {
      });
 
   Confirmar() {
-    if(typeof this.invitado.menor === 'undefined')
-    {
-      this.invitado.menor = 0;
-    }
+
     this.invitadoService.New(this.invitado).subscribe(()=>{
       this.alert.present();
     });
