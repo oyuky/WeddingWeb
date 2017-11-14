@@ -29,7 +29,7 @@ export class IntroPage {
   }
 
   navHome() {
-    if (this.password == "O&F.25.11.2017" || this.password == "lesluthiers") {
+    if (this.password.trim() == "O&F.25.11.2017" || this.password.trim() == "lesluthiers") {
        this.navCtrl.setRoot(Invitacion);
     }
    }
