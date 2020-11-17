@@ -55765,7 +55765,7 @@ var IntroPage = (function () {
         console.log('ionViewDidLoad IntroPage');
     };
     IntroPage.prototype.navHome = function () {
-        if (this.password == "O&F.25.11.2017" || this.password == "lesluthiers") {
+        if (this.password.trim() == "O&F.25.11.2017" || this.password.trim() == "lesluthiers") {
             this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__pages_invitacion_invitacion__["a" /* Invitacion */]);
         }
     };
@@ -55834,18 +55834,39 @@ var Confirmacion = (function () {
         //this.invitadoService.load('correo@demo.com').then(data => {this.data = data});
         this.invitado.menor = 0;
         this.invitado.adultos = 0;
+        this.coun = 0;
+        this.message = "";
     }
     Confirmacion.prototype.Confirmar = function () {
         var _this = this;
-        this.invitadoService.New(this.invitado).subscribe(function () {
-            _this.alert.present();
-        });
+        this.coun = 0;
+        if (this.invitado.adultos > 0) {
+            this.coun = 1;
+            this.message = "Necesitas 1 adulto por lo menos.";
+        }
+        if (this.invitado.familia == null) {
+            this.coun = 1;
+            this.message = "Necesitas capturar la familia por lo menos.";
+        }
+        if (this.invitado.correo == null) {
+            this.coun = 1;
+            this.message = "Necesitas capturar el correo.";
+        }
+        if (this.invitado.nombre == null) {
+            this.coun = 1;
+            this.message = "Necesitas capturar el nombre.";
+        }
+        if (this.coun == 0) {
+            this.invitadoService.New(this.invitado).subscribe(function () {
+                _this.alert.present();
+            });
+        }
     };
     return Confirmacion;
 }());
 Confirmacion = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'confirmacion',template:/*ion-inline-start:"D:\WeddingWeb\src\pages\confirmacion\confirmacion.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Confirmaci&oacute;n</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="backgroundInv">\n\n  <h3 text-center >\n\n  </h3>\n\n    <ion-list>\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Nombre</ion-label>\n\n    <ion-input  [(ngModel)]="invitado.nombre" placeholder="Nombre"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Correo</ion-label>\n\n    <ion-input [(ngModel)]="invitado.correo" type="email" placeholder="Correo"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Familia</ion-label>\n\n    <ion-input [(ngModel)]="invitado.familia" placeholder="Familia"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Adultos</ion-label>\n\n    <ion-input [(ngModel)]="invitado.adultos" type="number" placeholder="Adultos"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Menores</ion-label>\n\n    <ion-input [(ngModel)]="invitado.menor" type="number" placeholder="Menores"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" stacked>Que musica quieres</ion-label>\n\n    <ion-textarea [(ngModel)]="invitado.musica" placeholder="Musica Favorita"></ion-textarea>\n\n  </ion-item>\n\n\n\n<ion-item>\n\n<button ion-button (click)="Confirmar()">Confirmar Asistencia</button>\n\n</ion-item>\n\n\n\n</ion-list>\n\n<div class="flor">\n\n  <img src="assets/images/geometric-rose.png" height="150" width="150">\n\n</div>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\WeddingWeb\src\pages\confirmacion\confirmacion.html"*/,
+        selector: 'confirmacion',template:/*ion-inline-start:"D:\WeddingWeb\src\pages\confirmacion\confirmacion.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Confirmaci&oacute;n</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="backgroundInv">\n\n  <h3 text-center >\n\n  </h3>\n\n    <ion-list>\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Nombre</ion-label>\n\n    <ion-input  [(ngModel)]="invitado.nombre" placeholder="Nombre"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Correo</ion-label>\n\n    <ion-input [(ngModel)]="invitado.correo" type="email" placeholder="Correo"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Familia</ion-label>\n\n    <ion-input [(ngModel)]="invitado.familia" placeholder="Familia"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Adultos</ion-label>\n\n    <ion-input [(ngModel)]="invitado.adultos" type="number" placeholder="Adultos"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" fixed>Menores</ion-label>\n\n    <ion-input [(ngModel)]="invitado.menor" type="number" placeholder="Menores"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label color="primary" stacked>Que musica quieres</ion-label>\n\n    <ion-textarea [(ngModel)]="invitado.musica" placeholder="Musica Favorita"></ion-textarea>\n\n  </ion-item>\n\n\n\n<ion-item>\n\n  <ion-label [(ngModel)]="message" color="primary"></ion-label>\n\n<button ion-button (click)="Confirmar()">Confirmar Asistencia</button>\n\n</ion-item>\n\n\n\n</ion-list>\n\n<div class="flor">\n\n  <img src="assets/images/geometric-rose.png" height="150" width="150">\n\n</div>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\WeddingWeb\src\pages\confirmacion\confirmacion.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_2__providers_invitadoService__["a" /* InvitadoService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_invitadoService__["a" /* InvitadoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_invitadoService__["a" /* InvitadoService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* AlertController */]) === "function" && _d || Object])
